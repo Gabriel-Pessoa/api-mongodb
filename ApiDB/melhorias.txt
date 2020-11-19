@@ -1,0 +1,8 @@
+1) No arquivo appsettings.json existe uma falha de segurança: a senha para acesso ao banco de dados está exposta. 
+   Não deve ser submetida ao GitHub de forma pública. 
+    Solução: Posso criar um arquivo oculto .env, acessar a propriedade que possui a senha atráves do appsettings.json e criar uma variável.
+    Por fim, interpolar na connectionString essa variável e não enviar o arquivo .env para o GitHub.
+
+2) Ampliar os métodos HTTP, adicionando os métodos Update(PUT/PATCH) e Delete.
+
+3) Melhorar a classe infectado, add mais atributos como: ID e nome
