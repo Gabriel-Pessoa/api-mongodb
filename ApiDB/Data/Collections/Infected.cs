@@ -1,5 +1,4 @@
 using System;
-using System.ComponentModel.DataAnnotations;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver.GeoJsonObjectModel;
@@ -22,13 +21,10 @@ namespace ApiDB.Data.Collections
         [BsonRepresentation(BsonType.ObjectId)]
         public String Id { get; set; }
 
-        [Required]
         public string Name { get; set; }
 
-        [Required]
         public DateTime DateBirth { get; set; }
 
-        [Required]
         public string Sex { get; set; }
 
         public GeoJson2DGeographicCoordinates Location { get; set; }
