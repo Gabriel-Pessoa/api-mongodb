@@ -46,7 +46,7 @@ namespace ApiDB.Data
                     // Evita rescrever todas as propriedades para exibição.
                     i.AutoMap();
                     // Evita bugs, caso aja acréscimo nas propriedades da classe Infected.
-                    i.SetIgnoreExtraElements(true);
+                    i.SetIgnoreExtraElements(true);  
                 });
             }
         }

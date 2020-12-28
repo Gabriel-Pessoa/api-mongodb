@@ -6,3 +6,5 @@
 2) Ampliar os métodos HTTP, adicionando os métodos Update(PUT/PATCH) e Delete.
 
 3) Melhorar a classe infectado, add mais atributos como: ID e nome
+
+4) Melhorar a validação 

@@ -8,18 +8,20 @@ namespace ApiDB.Models
     {
         [Required(ErrorMessage = "O nome é obrigatório", AllowEmptyStrings = false)]
         [StringLength(50, MinimumLength = 5, ErrorMessage = "O nome deve ter no mínimo 5 e no máximo 50 caracteres")]
+        [RegularExpression(@"^[a-zA-Z ,.'-]+$", ErrorMessage = "Nome inválido. Evite acentos e caracteres especiais")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "A data de nascimento é obrigatório", AllowEmptyStrings = false)]
+
         public DateTime DateBirth { get; set; }
 
+
         [Required(ErrorMessage = "O sexo é obrigatório", AllowEmptyStrings = false)]
+        [RegularExpression(@"^[FM]{1}", ErrorMessage = "Sexo inválido, tente 'F' ou 'M'")]
         public string Sex { get; set; }
 
-        [Required(ErrorMessage = "A latitude é obrigatório", AllowEmptyStrings = false)]
+
         public double Latitude { get; set; }
 
-        [Required(ErrorMessage = "A longitude é obrigatório", AllowEmptyStrings = false)]
         public double Longitude { get; set; }
     }
 }

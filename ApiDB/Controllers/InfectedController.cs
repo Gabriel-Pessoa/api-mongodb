@@ -1,3 +1,4 @@
+using System;
 using ApiDB.Data.Collections;
 using ApiDB.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -59,7 +60,7 @@ namespace ApiDB.Controllers
             //Atualiza também a location para não ter inconsistência de dados
             var location = new GeoJson2DGeographicCoordinates(dto.Longitude, dto.Latitude);
 
-            var update = Builders<Infected>.Update.Set("name", dto.Name).Set("dateBirth", dto.DateBirth).Set("sex", dto.Sex)
+            var update = Builders<Infected>.Update.Set("name", dto.Name).Set("dateBirth", dto.DateBirth).Set("sex", dto.Sex.ToUpper())
                 .Set("location", location).Set("latitude", dto.Latitude).Set("longitude", dto.Longitude).CurrentDate("lastModified");
 
             _infectedsCollection.UpdateOne(filter, update); // Atualiza um documento
